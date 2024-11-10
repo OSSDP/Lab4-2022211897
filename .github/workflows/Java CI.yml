@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file Lab4-2022211897/pom.xml
 
     - name: Run tests with Maven
-      run: mvn test
+      run: mvn test --file Lab4-2022211897/pom.xml
