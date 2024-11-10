@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -21,14 +20,8 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
 
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
 
-    #- name: Build with Maven (if using Maven)
-    #  run: mvn -B package --file pom.xml
-
-    - name: Run tests
-      run: ./gradlew test
-
-    #- name: Run tests with Maven (if using Maven)
-    #  run: mvn test
+    - name: Run tests with Maven
+      run: mvn test
